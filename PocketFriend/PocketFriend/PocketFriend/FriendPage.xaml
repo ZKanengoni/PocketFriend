@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PocketFriend.FriendPage">
+    <ContentPage.Content>
+        <Grid RowSpacing="0" BackgroundColor="#fff">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <BoxView BackgroundColor="#B4AAF0" Grid.Row="0" HeightRequest="310"
+                     CornerRadius="0, 0, 35, 35" />
+           
+            <Frame 
+                BackgroundColor="#B4AAF0"
+                HeightRequest="235"
+                HasShadow="False"
+                CornerRadius="35">
+                
+                <StackLayout>
+                    
+                    <ImageButton
+                        Source="back"
+                        BackgroundColor="Transparent"
+                        HeightRequest="24"
+                        WidthRequest="24"
+                        Margin="-330, 0, 0, 0"
+                        Clicked="PreviousPage"/>
+                    
+                    <Image Source="hoodiehappy"
+                        WidthRequest="200"
+                        HeightRequest="200"
+                        VerticalOptions="CenterAndExpand"
+                        Margin="0, 0, 0, 80"
+                        Opacity="0.90">
+                    </Image>
+                   
+                </StackLayout>
+                
+            </Frame>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Column="0"
+                         BackgroundColor="#FA95B9"
+                         Padding="0"
+                         HeightRequest="38"
+                         WidthRequest="5"
+                         CornerRadius="12"
+                         Margin="10, 20, 10, 10"
+                         HasShadow="False">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="like"
+                               WidthRequest="12"
+                               HeightRequest="12"
+                               Margin="14, 0, 0, 0"/>
+
+                        <Label Grid.Column="1" Text="89" 
+                               VerticalOptions="Center"
+                               FontSize="22"
+                               TextColor="#fff"
+                               Margin="10, 0, 0, 0"
+                               x:Name="HealthLabel"/>
+
+                    </Grid>
+
+                </Frame>
+
+                <Frame Grid.Column="1"
+                         BackgroundColor="#B4AAF0"
+                         Padding="0"
+                         HeightRequest="35"
+                         WidthRequest="5"
+                         CornerRadius="12"
+                         Margin="5, 20, 5, 10"
+                         HasShadow="False">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="mood"
+                               WidthRequest="12"
+                               HeightRequest="12"
+                               Margin="14, 0, 0, 0"/>
+
+                        <Label Grid.Column="1" Text="Good" 
+                               VerticalOptions="Center"
+                               FontSize="22"
+                               TextColor="#fff"
+                               Margin="10, 0, 0, 0"
+                               x:Name="MoodLabel"/>
+
+                    </Grid>
+
+
+                </Frame>
+
+                <Frame Grid.Column="2"
+                         BackgroundColor="#FFE98E"
+                         Padding="0"
+                         HeightRequest="35"
+                         WidthRequest="5"
+                         CornerRadius="12"
+                         Margin="10, 20, 10, 10"
+                         HasShadow="False">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="dollar"
+                               WidthRequest="12"
+                               HeightRequest="12"
+                               Margin="14, 0, 0, 0"/>
+
+                        <Label Grid.Column="1" Text="$240" 
+                               VerticalOptions="Center"
+                               FontSize="22"
+                               TextColor="#fff"
+                               Margin="8, 0, 0, 0"
+                               x:Name="MoneyLabel"/>
+
+                    </Grid>
+
+                </Frame>
+
+            </Grid>
+
+            <StackLayout  Grid.Row="2" 
+                          HeightRequest="170"
+                          Padding="10, 0, 10, 0">
+
+                <Label Text="Hunger"
+                       TextColor="#9F9F9F"
+                       FontSize="20"
+                       FontFamily="MainFont"/>
+
+                <ProgressBar Progress="0.5"
+                             HorizontalOptions="Fill"
+                             WidthRequest="70"
+                             HeightRequest="20"
+                             ProgressColor="#FFE98E"
+                             x:Name="HungerBar"/>
+
+
+                <Label Text="Energy"
+                       TextColor="#9F9F9F"
+                       FontSize="20"
+                       FontFamily="MainFont"/>
+
+                <ProgressBar Progress="0.5"
+                             HorizontalOptions="Fill"
+                             WidthRequest="70"
+                             HeightRequest="20"
+                             ProgressColor="#A0B3F4"
+                             x:Name="EnergyBar"/>
+
+                <Label Text="Happiness"
+                       TextColor="#9F9F9F"
+                       FontSize="20"
+                       FontFamily="MainFont"/>
+
+                <ProgressBar Progress="0.5"
+                             HorizontalOptions="Fill"
+                             WidthRequest="70"
+                             HeightRequest="20"
+                             ProgressColor="#FA95B9"
+                             x:Name="MoodBar"/>
+
+            </StackLayout>
+
+            <Frame Grid.Row="3" 
+                   Padding="0"
+                   BackgroundColor="#F0F0F0"
+                   Opacity="1"
+                   Margin="8, 8, 8, 12"
+                   CornerRadius="12"
+                   HasShadow="False">
+
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <ImageButton Grid.Column="0"
+                                 Source="food"
+                                 WidthRequest="13"
+                                 HeightRequest="13"
+                                 Margin="12"
+                                 Padding="19"
+                                 BackgroundColor="#B4AAF0" 
+                                 CornerRadius="16">
+                    </ImageButton>
+
+                    <ImageButton Grid.Column="1"
+                                 Source="night"
+                                 WidthRequest="13"
+                                 HeightRequest="13"
+                                 Margin="12"
+                                 Padding="19"
+                                 BackgroundColor="#B4AAF0" 
+                                 CornerRadius="16">
+                    </ImageButton>
+
+                    <ImageButton Grid.Column="2"
+                                 Source="portfolio"
+                                 WidthRequest="13"
+                                 HeightRequest="13"
+                                 Margin="12"
+                                 Padding="19"
+                                 BackgroundColor="#B4AAF0" 
+                                 CornerRadius="16">
+                    </ImageButton>
+
+                    <ImageButton Grid.Column="3"
+                                 Source="wine"
+                                 WidthRequest="13"
+                                 HeightRequest="13"
+                                 Margin="12"
+                                 Padding="19"
+                                 BackgroundColor="#B4AAF0" 
+                                 CornerRadius="16">
+                    </ImageButton>
+                </Grid>
+
+            </Frame>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
